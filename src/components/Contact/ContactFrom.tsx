@@ -62,7 +62,7 @@ export default function ContactForm() {
         setIsLoading(true);
         setErrorMessage(null); // Reset any previous errors
         try {
-            const response = await axios.post("https://hubnex-project-seven.vercel.app/api/from/submitFrom", payload);
+            const response = await axios.post(import.meta.env.VITE_BACKEND, payload);
                if (response.status === 201) {
                 form.reset();  // Reset the form
                 toast.success("Your message has been sent successfully!");
